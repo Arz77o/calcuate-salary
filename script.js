@@ -94,6 +94,10 @@ function calculateCompensation() {
     document.getElementById("totalResult").innerText =
         `الأجر الرئيسي = ${basic} + ${exp} = ${total}`;
     document.getElementById("totalValue").value = total;
+    const support = total * 0.10;
+    document.getElementById("supportResult").innerText =
+        `منحة دعم نشاط الإدارة = ${total} × 10% = ${support.toFixed(2)}`;
+    document.getElementById("supportValue").value = support;
     }
 
     function calculateSupportAllowance() {
@@ -101,4 +105,5 @@ function calculateCompensation() {
     const support = total * 0.10;
     document.getElementById("supportResult").innerText = "منحة دعم نشاط الإدارة: " + support.toFixed(2);
     }
+
 
