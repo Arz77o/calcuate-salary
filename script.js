@@ -85,20 +85,20 @@ function calculateCompensation() {
         `تعويضات الخبرة المهنية = قيمة الدرجة (${value}) × 45 = ${compensation}`; 
     document.getElementById("expValue").value = compensation; 
     updateTotal();
+    }
 
-}
-
-function updateTotal() {
+    function updateTotal() {
     const basic = parseFloat(document.getElementById("basicValue").value) || 0;
     const exp = parseFloat(document.getElementById("expValue").value) || 0;
     const total = basic + exp;
     document.getElementById("totalResult").innerText =
         `الأجر الرئيسي = ${basic} + ${exp} = ${total}`;
-document.getElementById("totalValue").value = total;
-}
+    document.getElementById("totalValue").value = total;
+    }
 
-function calculateSupportAllowance() {
+    function calculateSupportAllowance() {
     const total = parseFloat(document.getElementById("totalValue").value) || 0;
     const support = total * 0.10;
     document.getElementById("supportResult").innerText = "منحة دعم نشاط الإدارة: " + support.toFixed(2);
-}
+    }
+
