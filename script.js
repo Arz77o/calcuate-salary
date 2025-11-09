@@ -195,4 +195,20 @@ function calculateCompensation() {
   
   // حفظ القيمة
   document.getElementById("grossValue").value = gross;
+
+}
+
+function calculateSocialSecurity() {
+    // جلب الأجر الخام
+    const grossSalary = parseFloat(document.getElementById("grossValue").value) || 0;
+
+    // حساب الاقتطاع (9%)
+    const deduction = grossSalary * 0.09;
+
+    // عرض النتيجة
+    document.getElementById("socialResult").innerText =
+        `اقتطاعات الضمان الاجتماعي = الأجر الخام (${grossSalary}) × 9% = ${deduction.toFixed(2)}`;
+
+    // حفظ القيمة إذا احتجت لاستخدام لاحق
+    document.getElementById("socialValue").value = deduction;
 }
