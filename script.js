@@ -103,5 +103,28 @@ function calculateCompensation() {
     document.getElementById("supportResult").innerText = "منحة دعم نشاط الإدارة: " + support.toFixed(2);
     }
 
+    function calculateAdministrativeAllowance() {
+    // جلب قيمة الأجر الرئيسي من عنصر موجود مسبقًا
+    const total = parseFloat(document.getElementById("totalValue").innerText) || 0;
+
+    // جلب رقم الصنف من عنصر موجود مسبقًا
+    const rank = parseInt(document.getElementById("rankValue").innerText) || 0;
+
+    // تحديد النسبة حسب الصنف
+    let percentage = 0;
+    if (rank >= 1 && rank <= 10) {
+        percentage = 0.25; // 25%
+    } else if (rank >= 11 && rank <= 17) {
+        percentage = 0.40; // 40%
+    }
+
+    // حساب منحة الإدارية المشتركة
+    const allowance = total * percentage;
+
+    // عرض النتيجة مع رقم عشريين فقط
+    document.getElementById("allowanceResult").innerText =
+        "منحة الإدارية المشتركة: " + allowance.toFixed(2);
+    }
+    
 
 
