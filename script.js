@@ -230,4 +230,25 @@ function calculateTaxableSalary() {
     // حفظ القيمة إذا احتجت لاستخدام لاحق
     document.getElementById("taxableValue").value = taxableSalary;
 }
+function calculateFamilyAllowance() {
+    // جلب عدد الأطفال
+    const children = parseInt(document.getElementById("children").value) || 0;
+
+    // حساب منحة الأطفال
+    const childrenAllowance = children * 300;
+
+    // التحقق من خيار الزوجة ماكثة في البيت
+    const wifeCheck = document.getElementById("wifeCheck").checked;
+    const wifeAllowance = wifeCheck ? 800 : 0;
+
+    // المجموع الكلي للمنحة العائلية
+    const totalFamilyAllowance = childrenAllowance + wifeAllowance;
+
+    // عرض النتيجة
+    document.getElementById("familyResult").innerText =
+        `المنحة العائلية = (${children} × 300) + ${wifeAllowance} (الزوجة) = ${totalFamilyAllowance}`;
+
+    // حفظ القيمة إذا احتجت لاستخدام لاحق
+    document.getElementById("familyValue").value = totalFamilyAllowance;
+}
 
