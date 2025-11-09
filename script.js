@@ -108,7 +108,7 @@ function calculateCompensation() {
     const total = parseFloat(document.getElementById("totalValue").innerText) || 0;
 
     // جلب رقم الصنف من عنصر موجود مسبقًا
-    const rank = parseInt(document.getElementById("rankValue").innerText) || 0;
+    const rank = parseInt(document.getElementById("rank").innerText) || 0;
 
     // تحديد النسبة حسب الصنف
     let percentage = 0;
@@ -126,5 +126,6 @@ function calculateCompensation() {
         "منحة الإدارية المشتركة: " + allowance.toFixed(2);
     }
     
+
 
 
