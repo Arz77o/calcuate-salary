@@ -114,10 +114,11 @@
          </div>
          <div class="calculate">
             <h2>إقتطاع الضريبي:</h2>
-            <button class="ui-btn" onclick="calculate()">
+            <button class="ui-btn" onclick="calculateTaxableSalary()">
                <span>النتيجة</span>
             </button>
-            <p id="result"></p>
+            <p id="taxableResult"></p>
+            <input type="hidden" id="taxableValue">
          </div>
           <div class="calculate">
             <h2>أجر الصافي</h2>
@@ -135,6 +136,7 @@
 
 
 </html>
+
 
 
 
