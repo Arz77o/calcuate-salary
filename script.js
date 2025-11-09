@@ -251,4 +251,27 @@ function calculateFamilyAllowance() {
     // حفظ القيمة إذا احتجت لاستخدام لاحق
     document.getElementById("familyValue").value = totalFamilyAllowance;
 }
+    function calculateNetSalary() {
+    // جلب الأجر الخام
+    const grossSalary = parseFloat(document.getElementById("grossValue").value) || 0;
+
+    // جلب اقتطاعات الضمان الاجتماعي
+    const socialDeduction = parseFloat(document.getElementById("socialValue").value) || 0;
+
+    // جلب المنحة العائلية
+    const familyAllowance = parseFloat(document.getElementById("familyValue").value) || 0;
+
+    // جلب الرقم الذي يدخله المستخدم
+    const userNumber = parseFloat(document.getElementById("userNumber").value) || 0;
+
+    // حساب الأجر الصافي
+    const netSalary = (socialDeduction + userNumber) - (familyAllowance + grossSalary);
+
+    // عرض النتيجة
+    document.getElementById("netResult").innerText =
+        `الأجر الصافي = (${socialDeduction} + ${userNumber}) - (${familyAllowance} + ${grossSalary}) = ${netSalary.toFixed(2)}`;
+
+    // حفظ القيمة إذا احتجت لاستخدام لاحق
+    document.getElementById("netValue").value = netSalary;
+    }
 
