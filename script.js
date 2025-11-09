@@ -212,3 +212,22 @@ function calculateSocialSecurity() {
     // حفظ القيمة إذا احتجت لاستخدام لاحق
     document.getElementById("socialValue").value = deduction;
 }
+
+function calculateTaxableSalary() {
+    // جلب الأجر الخام
+    const grossSalary = parseFloat(document.getElementById("grossValue").value) || 0;
+
+    // جلب اقتطاعات الضمان الاجتماعي
+    const socialDeduction = parseFloat(document.getElementById("socialValue").value) || 0;
+
+    // حساب الأجر الضريبي
+    const taxableSalary = grossSalary - socialDeduction;
+
+    // عرض النتيجة
+    document.getElementById("taxableResult").innerText =
+        `الأجر الضريبي = الأجر الخام (${grossSalary}) - اقتطاعات الضمان الاجتماعي (${socialDeduction}) = ${taxableSalary.toFixed(2)}`;
+
+    // حفظ القيمة إذا احتجت لاستخدام لاحق
+    document.getElementById("taxableValue").value = taxableSalary;
+}
+
