@@ -100,9 +100,13 @@ function calculateCompensation() {
     function calculateSupportAllowance() {
     const total = parseFloat(document.getElementById("totalValue").value) || 0;
     const support = total * 0.10;
-    document.getElementById("supportResult").innerText = "منحة دعم نشاط الإدارة: " + support.toFixed(2);
-    }
+            document.getElementById("supportResult").innerText =
+        `منحة دعم نشاط الإدارة = الأجر الرئيسي (${total}) × 10% = ${support.toFixed(2)}`;
 
+    // حفظ القيمة إذا احتجتها لاحقًا
+    document.getElementById("supportValue").value = support;
+    }
+    
     function calculateAdministrativeAllowance() {
     // جلب الأجر الرئيسي بعد الحساب (الأجر الأساسي + تعويض الخبرة)
     const total = parseFloat(document.getElementById("totalValue").value) || 0;
@@ -134,3 +138,4 @@ function calculateCompensation() {
     // حفظ القيمة إذا احتجتها لاحقًا
     document.getElementById("adminValue").value = allowance;
     }
+
