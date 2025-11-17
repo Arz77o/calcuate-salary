@@ -29,7 +29,7 @@ li,
 a {
   font-family: "Reem Kufi", sans-serif;
   font-weight: 500;
-  font-size: 15px;
+  font-size: 14px;
   color: #EEEEEE;
   text-decoration: none;
 }
@@ -581,3 +581,4 @@ footer{
   max-width: 100%;
   min-height: auto;
 }
+
