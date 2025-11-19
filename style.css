@@ -29,7 +29,7 @@ li,
 a {
   font-family: "Reem Kufi", sans-serif;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 15px;
   color: #EEEEEE;
   text-decoration: none;
 }
@@ -40,7 +40,7 @@ a {
 
 .nav__link li {
   display: inline-block;
-  padding: 0px 10px;
+  padding: 0px 15px;
 }
 
 .nav__link li a:hover {
@@ -581,6 +581,7 @@ footer{
   max-width: 100%;
   min-height: auto;
 }
+
 
 
 
